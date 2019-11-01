@@ -17,31 +17,33 @@ function skynet(number) {
   return robotArray;
 }
 
-function typer(array, i) {
-  if (i < array.length) {
-    $("p").append(array[i]);
+function typer(string, i) {
+  if (i < string.length) {
+    $("p").append(string.charAt(i));
     i++;
     setTimeout(function() {
-      typer(array, i);
-    }, 100);
-  } else {
-    return;
+      typer(string, i);
+    }, 80);
+  }
+}
+
+function roboTalk(sentence, where, speed, i) {
+  if (i < sentence.length) {
+    where.append(sentence.charAt(i));
+    i++;
+    setTimeout(function() {
+      roboTalk(sentence, where, speed, i);
+    }, speed);
   }
 }
 
 //UI Logic
 $(document).ready(function () {
-  $("form#user-input").submit(function(event) {
+  $("form#user-number").submit(function(event) {
     event.preventDefault();
 
-    var array = "This is a test string".split("");
-    alert(array);
 
-    typer(array, 0);
-
-
-
-
+    roboTalk("This is my robot talk test sentence", $("p"), 60, 0);
 
     var userNumber = $("input#number").val();
     var result = skynet(userNumber)
