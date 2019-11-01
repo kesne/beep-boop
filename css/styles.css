@@ -1,3 +1,21 @@
+@font-face {
+    font-family: "arcadeclassic";
+    src: url("../fonts/arcadeclassic-regular.woff2") format("woff2"),
+         url("../fonts/arcadeclassic-regular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+  background-image: url("../img/pattern.png");
+}
+
+h3 {
+  font-family: arcadeclassic, monospace;
+  font-size: 30px;
+  color: white;
+}
+
 #prompt-number {
   display: none;
 }

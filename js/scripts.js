@@ -31,7 +31,7 @@ function roboTalk(sentence, where, speed, i) {
 $(document).ready(function () {
   var userName = "";
   var userNumber = "";
-  roboTalk("Greetings, human. My designation is 'RoboBot' - you may call me 'Rob.' What is your designator?", $("div#prompt-name h3"), 50, 0);
+  roboTalk("Greetings, human. I am designated is 'RoboBot' - you may call me 'Rob.' What is your designator?", $("div#prompt-name h3"), 50, 0);
 
   $("form#user-name").submit(function(event) {
     event.preventDefault();
