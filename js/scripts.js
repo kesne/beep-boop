@@ -1,13 +1,16 @@
 //Business Logic
 const greeting = "Greetings, human. I am designated 'RoboBot' - you may call me 'Rob.' What is your designator?";
 
-function skynet(number) {
+function arrayMaker(number, name) {
+  if (isNaN(number) || number < 0 || (Math.floor(number) != number)) {
+    return "ERROR! Please enter a positive integer from 1 to 1000"
+  }
   var robotArray = [];
   var tester = "";
   for (var i = 0; i <= number; i++) {
     tester = i + "";
     if (tester.includes("3")) {
-      robotArray.push("I'm sorry, Dave. I'm afraid I can't do that.");
+      robotArray.push("I'm sorry, " + name + ". I'm afraid I can't do that.");
     } else if (tester.includes("2")) {
       robotArray.push("Boop!");
     } else if (tester.includes("1")) {
@@ -16,15 +19,16 @@ function skynet(number) {
     robotArray.push(i);
     }
   }
-  return robotArray;
+  var result = robotArray.join(" :: ");
+  return result;
 }
 
-function roboTalk(sentence, speed, i) {
+function roboTalk(sentence, location, speed, i) {
   if (i < sentence.length) {
-    $("div#speech p").append(sentence.charAt(i));
+    location.append(sentence.charAt(i));
     i++;
     setTimeout(function() {
-      roboTalk(sentence, speed, i);
+      roboTalk(sentence, location, speed, i);
     }, speed);
   }
 }
@@ -33,7 +37,7 @@ function roboTalk(sentence, speed, i) {
 $(document).ready(function () {
   var userName = "";
   var userNumber = "";
-  roboTalk(greeting, 60, 0);
+  roboTalk(greeting, $("p#chat"), 50, 0);
 
   $("form#prompt-name").submit(function(event) {
     event.preventDefault();
@@ -41,16 +45,18 @@ $(document).ready(function () {
     userName = $("input#name").val();
     $("form#prompt-name").hide();
     $("form#prompt-number").show();
-    $("div#speech p").text("");
-    roboTalk("It is a pleasure to make your acquaintance, '" + userName + ".' What is your favorite number?", 50, 0);
+    $("p#chat").text("");
+    roboTalk("It is a pleasure to make your acquaintance, '" + userName + ".' Let's play a game. What is your favorite number?", $("p#chat"), 50, 0);
   });
 
   $("form#prompt-number").submit(function(event) {
     event.preventDefault();
 
-    userNumber = $("input#number").val();
-    var result = skynet(userNumber);
-    console.log(result);
+    userNumber = parseInt($("input#number").val());
+    var result = arrayMaker(userNumber, userName);
+
+    $("p#chat").text("");
+    roboTalk(result, $("p#output"), 3, 0);
   });
 
 });
