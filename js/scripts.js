@@ -17,16 +17,6 @@ function skynet(number) {
   return robotArray;
 }
 
-function typer(string, i) {
-  if (i < string.length) {
-    $("p").append(string.charAt(i));
-    i++;
-    setTimeout(function() {
-      typer(string, i);
-    }, 80);
-  }
-}
-
 function roboTalk(sentence, where, speed, i) {
   if (i < sentence.length) {
     where.append(sentence.charAt(i));
@@ -39,14 +29,25 @@ function roboTalk(sentence, where, speed, i) {
 
 //UI Logic
 $(document).ready(function () {
+  var userName = "";
+  var userNumber = "";
+  roboTalk("Greetings, human. My designation is 'RoboBot' - you may call me 'Rob.' What is your designator?", $("div#prompt-name h3"), 50, 0);
+
+  $("form#user-name").submit(function(event) {
+    event.preventDefault();
+
+    userName = $("input#name").val();
+    $("div#prompt-name").hide();
+    $("div#prompt-number").show();
+    roboTalk("It is a pleasure to make your acquaintance, '" + userName + ".' What is your favorite number?", $("div#prompt-number h3"), 50, 0);
+  });
+
   $("form#user-number").submit(function(event) {
     event.preventDefault();
 
-
-    roboTalk("This is my robot talk test sentence", $("p"), 60, 0);
-
-    var userNumber = $("input#number").val();
-    var result = skynet(userNumber)
+    userNumber = $("input#number").val();
+    var result = skynet(userNumber);
     console.log(result);
   });
+
 });
