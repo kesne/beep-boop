@@ -1,4 +1,6 @@
 //Business Logic
+const greeting = "Greetings, human. I am designated 'RoboBot' - you may call me 'Rob.' What is your designator?";
+
 function skynet(number) {
   var robotArray = [];
   var tester = "";
@@ -17,12 +19,12 @@ function skynet(number) {
   return robotArray;
 }
 
-function roboTalk(sentence, where, speed, i) {
+function roboTalk(sentence, speed, i) {
   if (i < sentence.length) {
-    where.append(sentence.charAt(i));
+    $("div#speech p").append(sentence.charAt(i));
     i++;
     setTimeout(function() {
-      roboTalk(sentence, where, speed, i);
+      roboTalk(sentence, speed, i);
     }, speed);
   }
 }
@@ -31,19 +33,19 @@ function roboTalk(sentence, where, speed, i) {
 $(document).ready(function () {
   var userName = "";
   var userNumber = "";
-  roboTalk("Greetings, human. I am designated 'RoboBot' - you may call me 'Rob.' What is your designator?", $("div#speech p"), 50, 0);
+  roboTalk(greeting, 60, 0);
 
-  $("form#user-name").submit(function(event) {
+  $("form#prompt-name").submit(function(event) {
     event.preventDefault();
 
     userName = $("input#name").val();
-    $("div#prompt-name").hide();
-    $("div#prompt-number").show();
+    $("form#prompt-name").hide();
+    $("form#prompt-number").show();
     $("div#speech p").text("");
-    roboTalk("It is a pleasure to make your acquaintance, '" + userName + ".' What is your favorite number?", $("div#speech p"), 50, 0);
+    roboTalk("It is a pleasure to make your acquaintance, '" + userName + ".' What is your favorite number?", 50, 0);
   });
 
-  $("form#user-number").submit(function(event) {
+  $("form#prompt-number").submit(function(event) {
     event.preventDefault();
 
     userNumber = $("input#number").val();

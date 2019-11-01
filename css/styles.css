@@ -10,11 +10,11 @@ body {
   background-image: url("../img/pattern.png");
 }
 
-.header {
+.backing {
   background-color: rgba(0, 0, 0, 0.4);
   margin-top: 10px;
 }
-.header h1 {
+.backing h1 {
   text-align: center;
   font-family: monospace;
   font-variant: small-caps;
@@ -25,36 +25,31 @@ body {
 }
 
 #speech {
-  margin-top: 15px;
-  background-image: url("../img/speech.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
+  background-color: rgba(255, 255, 255, 0.9);
   height: 40%;
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 #speech p {
   font-family: arcadeclassic, monospace;
   font-size: 35px;
-  margin-left: 8%;
-  margin-right: 8%;
-  padding-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
-.inputs {
-  background-color: rgba(0, 0, 0, 0.4);
-}
-#user-name {
-  margin-top: 10px;
-  padding: 5px 5px 5px 5px;
-  background-color: rgba(255, 255, 255, 0.9);
+#prompt-number {
+  display: none;
 }
 
 #rob {
-  width: 50%;
-  margin-top: -200px;
-  margin-right: 10%;
-  margin-left: auto;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  text-align: center;
+  border-radius: 25px;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+#rob img {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  height: 51%;
 }

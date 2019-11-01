@@ -9,45 +9,42 @@
     <title>Beep Beep Boop</title>
   </head>
   <body>
-    <div class="container header">
+    <div class="container backing">
       <h1>Beep Beep Boop</h1>
     </div>
 
-    <div class="container" id="robo">
-
-      <div id="speech">
-        <p></p>
-      </div>
-
+    <div class="container">
       <div class="row">
-        <div class="col-md-6 inputs">
 
-          <form id="user-name">
+        <div class="col-md-6 backing">
+          <div id="speech">
+            <p></p>
+          </div>
+          <form id="prompt-name">
             <div class="form-group">
-              <label for="name">Input name: </label>
-              <input id="name" class="form-control" type="text" required>
+              <input id="name" class="form-control" type="text" placeholder="Please enter your name" required>
             </div>
             <div class="buttonContainer">
-              <button type="submit" class="btn">Submit Answers!</button>
+              <button type="submit" class="btn">Tell RoboBot!</button>
             </div>
           </form>
-
-          <form id="user-number">
+          <form id="prompt-number">
             <div class="form-group">
-              <label for="number">Input number: </label>
-              <input id="number" class="form-control" type="number" required>
+              <input id="number" class="form-control" type="number" placeholder="Please enter your favorite number" required>
             </div>
             <div class="buttonContainer">
-              <button type="submit" class="btn">Submit Answers!</button>
+              <button type="submit" class="btn">Tell RoboBot!</button>
             </div>
           </form>
-
         </div>
+
         <div class="col-md-6">
-          <img src="img/robot.png" alt="robot" id="rob">
+          <div id="rob">
+            <img src="img/robot.png" alt="robot">
+          </div>
         </div>
-      </div>
 
+      </div>
     </div>
   </body
 </html>
