@@ -12,8 +12,7 @@ body {
 
 .header {
   background-color: rgba(0, 0, 0, 0.4);
-  margin-top: 20px;
-  width: 90%;
+  margin-top: 10px;
 }
 .header h1 {
   text-align: center;
@@ -25,10 +24,32 @@ body {
   margin-top: 10px;
 }
 
-h3 {
+label {
   font-family: arcadeclassic, monospace;
-  font-size: 30px;
-  color: white;
+  font-size: 25px;
+  padding-top: 5px;
+}
+#name {
+  width: 25%;
+  float: bottom right;
+}
+
+#robo {
+  margin-top: 15px;
+  background-image: url("../img/speech.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  height: 40%;
+  width: 60%;
+}
+
+.speech {
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  height: 80%;
+  padding-top: 5px;
 }
 
 #prompt-number {
