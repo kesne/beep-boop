@@ -1,8 +1,18 @@
 //Business Logic
 function skynet(number) {
   var robotArray = [];
+  var tester = "";
   for (var i = 0; i <= number; i++) {
+    tester = i + "";
+    if (tester.includes("3")) {
+      robotArray.push("I'm sorry, Dave. I'm afraid I can't do that.");
+    } else if (tester.includes("2")) {
+      robotArray.push("Boop!");
+    } else if (tester.includes("1")) {
+      robotArray.push("Beep!");
+    } else {
     robotArray.push(i);
+    }
   }
   return robotArray;
 }
