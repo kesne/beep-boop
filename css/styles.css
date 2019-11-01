@@ -10,6 +10,21 @@ body {
   background-image: url("../img/pattern.png");
 }
 
+.header {
+  background-color: rgba(0, 0, 0, 0.4);
+  margin-top: 20px;
+  width: 90%;
+}
+.header h1 {
+  text-align: center;
+  font-family: monospace;
+  font-variant: small-caps;
+  font-weight: bold;
+  font-size: 60px;
+  background-color: rgba(255, 255, 255, 0.9);
+  margin-top: 10px;
+}
+
 h3 {
   font-family: arcadeclassic, monospace;
   font-size: 30px;
