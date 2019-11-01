@@ -5,9 +5,15 @@
     font-weight: normal;
     font-style: normal;
 }
+@keyframes movingbackground{
+  from {background-position: 0% 0%;}
+  to {background-position: -19.5% -53%;}
+}
 
 body {
   background-image: url("../img/pattern.png");
+  animation: movingbackground 20s infinite;
+  animation-timing-function: linear;
 }
 
 .backing {
@@ -26,15 +32,21 @@ body {
 
 #speech {
   background-color: rgba(255, 255, 255, 0.9);
-  height: 40%;
+  height: 50%;
   margin-top: 15px;
   margin-bottom: 15px;
 }
-#speech p {
+p{
   font-family: arcadeclassic, monospace;
-  font-size: 35px;
+}
+p#chat {
+  font-size: 40px;
   margin-left: 20px;
   margin-right: 20px;
+}
+p#output{
+  font-size: 12px;
+  margin: 10px 10px 10px 10px;
 }
 
 #prompt-number {
@@ -42,14 +54,15 @@ body {
 }
 
 #rob {
-  margin-top: 15px;
   margin-bottom: 15px;
   text-align: center;
-  border-radius: 25px;
-  background-color: rgba(255, 255, 255, 0.4);
 }
 #rob img {
   margin-top: 20px;
   margin-bottom: 20px;
-  height: 51%;
+  height: 59.9%;
+}
+
+.buttonContainer {
+  text-align: center;
 }
