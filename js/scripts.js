@@ -17,11 +17,21 @@ function skynet(number) {
   return robotArray;
 }
 
+function typer(string) {
+  for (var i = 0; i < string.length; i++) {
+    $("p#test").append(string.charAt(i));
+  }
+}
+
 
 //UI Logic
 $(document).ready(function () {
   $("form#user-input").submit(function(event) {
     event.preventDefault();
+
+    var test = "this is a test string";
+    var i = 0;
+    typer(test, i);
 
     var userNumber = $("input#number").val();
     var result = skynet(userNumber)
