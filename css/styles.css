@@ -7,7 +7,7 @@
 }
 @keyframes movingbackground{
   from {background-position: 0% 0%;}
-  to {background-position: -19.5% -53%;}
+  to {background-position: -19% -58%;}
 }
 
 body {
@@ -59,8 +59,8 @@ p#output{
 }
 #rob img {
   margin-top: 20px;
-  margin-bottom: 20px;
-  height: 59.9%;
+  margin-bottom: 25px;
+  height: 60%;
 }
 
 .buttonContainer {

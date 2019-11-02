@@ -1,19 +1,18 @@
 //Business Logic
 const greeting = "Greetings, human. I am designated 'RoboBot' - you may call me 'Rob.' What is your designator?";
+const badName = "' sounds more like a robot name. Perhaps it is you that is the robot, and I, the human?";
 
-function arrayMaker(number, name) {
+function numberGame(number, name) {
   if (isNaN(number) || number < 0 || (Math.floor(number) != number)) {
     return "ERROR! Please enter a positive integer from 1 to 1000"
   }
   var robotArray = [];
-  var tester = "";
   for (var i = 0; i <= number; i++) {
-    tester = i + "";
-    if (tester.includes("3")) {
+    if ((i + "").includes("3")) {
       robotArray.push("I'm sorry, " + name + ". I'm afraid I can't do that.");
-    } else if (tester.includes("2")) {
+    } else if ((i + "").includes("2")) {
       robotArray.push("Boop!");
-    } else if (tester.includes("1")) {
+    } else if ((i + "").includes("1")) {
       robotArray.push("Beep!");
     } else {
     robotArray.push(i);
@@ -53,7 +52,7 @@ $(document).ready(function () {
     event.preventDefault();
 
     userNumber = parseInt($("input#number").val());
-    var result = arrayMaker(userNumber, userName);
+    var result = numberGame(userNumber, userName);
 
     $("p#chat").text("");
     roboTalk(result, $("p#output"), 3, 0);
