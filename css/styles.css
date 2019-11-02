@@ -7,7 +7,7 @@
 }
 @keyframes movingbackground{
   from {background-position: 0% 0%;}
-  to {background-position: -19% -58%;}
+  to {background-position: -250px -250px;}
 }
 
 body {
@@ -59,7 +59,7 @@ p#output{
 }
 #rob img {
   margin-top: 20px;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
   height: 60%;
 }
 

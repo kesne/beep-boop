@@ -1,6 +1,6 @@
 //Business Logic
-const greeting = "Greetings, human. I am designated 'RoboBot' - you may call me 'Rob.' What is your designator?";
-const badName = "' sounds more like a robot name. Perhaps it is you that is the robot, and I, the human?";
+var greeting = "Greetings, human. I am designated 'RoboBot' - you may call me 'Rob.' What is your designator?";
+var badName = "' sounds more like a robot name. Perhaps it is you that is the robot, and I, the human?";
 
 function numberGame(number, name) {
   if (isNaN(number) || number < 0 || (Math.floor(number) != number)) {
@@ -42,10 +42,14 @@ $(document).ready(function () {
     event.preventDefault();
 
     userName = $("input#name").val();
+    $("p#chat").text("");
+    if (/[^a-z ]/i.test(userName)) {
+      roboTalk("'" + userName + badName, $("p#chat"), 50, 0);
+    } else {
     $("form#prompt-name").hide();
     $("form#prompt-number").show();
-    $("p#chat").text("");
     roboTalk("It is a pleasure to make your acquaintance, '" + userName + ".' Let's play a game. What is your favorite number?", $("p#chat"), 50, 0);
+    }
   });
 
   $("form#prompt-number").submit(function(event) {
