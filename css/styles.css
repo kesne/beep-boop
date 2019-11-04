@@ -32,10 +32,11 @@ body {
 
 #speech {
   background-color: rgba(255, 255, 255, 0.9);
-  height: 50%;
+  height: 28em;
   margin-top: 15px;
   margin-bottom: 15px;
 }
+
 p{
   font-family: arcadeclassic, monospace;
 }
@@ -63,7 +64,7 @@ p#output{
   height: 60%;
 }
 
-.buttonContainer {
+button {
   text-align: left;
 }
 .right {
