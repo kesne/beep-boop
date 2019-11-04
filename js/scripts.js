@@ -2,9 +2,9 @@
 function numberGame(number, name) {
   var robotArray = [];
   for (var i = 0; i <= number; i++) {
-    // Modified guidelines to make it a ~80% chance the number will be changed
-    if (Math.random() > 0.8) {
-      robotArray.push(i);
+    // Modified guidelines to make it a ~5% chance a unique phrase is given
+    if (Math.random() > 0.95) {
+      robotArray.push("I am a stabbing robot.");
     } else if ((i + "").includes("3")) {
       robotArray.push("I'm sorry, " + name + ". I'm afraid I can't do that.");
     } else if ((i + "").includes("2")) {
