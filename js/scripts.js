@@ -32,13 +32,14 @@ function roboTalk(sentence, location, speed, i) {
 $(document).ready(function () {
   var userName = "";
   var userNumber = "";
+
   roboTalk("Greetings, human. I am designated 'RoboBot' - you may call me 'Rob.' What is your designator?", $("p#chat"), 50, 0);
 
   $("form#prompt-name").submit(function(event) {
     event.preventDefault();
+    $("p").text("");
 
     userName = $("input#name").val();
-    $("p#chat").text("");
 
     if (/[^a-z ]/i.test(userName)) {
       roboTalk("'" + userName + "' sounds more like a robot name. Perhaps it is you that is the robot, and I, the human?", $("p#chat"), 50, 0);
@@ -51,16 +52,22 @@ $(document).ready(function () {
 
   $("form#prompt-number").submit(function(event) {
     event.preventDefault();
+    $("p").text("");
 
     userNumber = parseInt($("input#number").val());
-    $("p#chat").text("");
-    $("p#output").text("");
 
-    if ((isNaN(userNumber)) || (userNumber < 0) || (Math.floor(userNumber) != userNumber) || (userNumber > 120)) {
-      roboTalk("ERROR! Please enter a positive integer from 1 to 120.", $("p#chat"), 30, 0);
+    if ((isNaN(userNumber)) || (userNumber < 0) || (Math.floor(userNumber) != userNumber) || (userNumber > 130)) {
+      roboTalk("ERROR! Please enter a positive integer from 0 to 130.", $("p#chat"), 25, 0);
     } else {
       var result = numberGame(userNumber, userName);
       roboTalk(result, $("p#output"), 2, 0);
     }
+  });
+
+  $("button#startOver").click(function() {
+    $("p").text("");
+    roboTalk("Your designator was wrong? What a silly human error. What is your true designator?", $("p#chat"), 50, 0);
+    $("form#prompt-number").hide();
+    $("form#prompt-name").show();
   });
 });

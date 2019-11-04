@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
@@ -14,9 +15,9 @@
     </div>
 
     <div class="container">
-      <div class="row">
+      <div class="row backing">
 
-        <div class="col-md-6 backing">
+        <div class="col-md-6">
           <div id="speech">
             <p id="chat"></p>
             <p id="output"></p>
@@ -34,12 +35,13 @@
               <input id="number" class="form-control" type="number" placeholder="Please enter your favorite number" required>
             </div>
             <div class="buttonContainer">
-              <button type="submit" class="btn">Tell RoboBot!</button>
+              <button type="submit" class="btn left">Tell RoboBot!</button>
+              <button type="button" class="btn right" id="startOver">New Name?</button>
             </div>
           </form>
         </div>
 
-        <div class="col-md-6 backing">
+        <div class="col-md-6">
           <div id="rob">
             <img src="img/robot.png" alt="robot">
           </div>

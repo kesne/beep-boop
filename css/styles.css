@@ -64,5 +64,8 @@ p#output{
 }
 
 .buttonContainer {
-  text-align: center;
+  text-align: left;
+}
+.right {
+  float: right;
 }
